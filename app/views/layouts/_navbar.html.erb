@@ -1,0 +1,75 @@
+<style>
+
+@media screen and (min-width:992px){
+.nav-item {
+  line-height:50px;
+  }
+}
+
+</style>
+<nav class="navbar navbar-expand-lg navbar-dark p-3 bg-secondary" id="headerNav">
+  <div class="container-fluid">
+    <a class="navbar-brand d-block d-lg-none" href="#">
+      <img src="/static_files/images/logos/logo_2_white.png" height="80" />
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+ 
+    <div class=" collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav mx-auto ">
+        <li class="nav-item">
+          <a class="nav-link mx-2 active" aria-current="page" href="/">La SPA</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-2" href="#">Les Photos</a>
+        </li>
+        <li class="nav-item d-none d-lg-block">
+          <a class="nav-link mx-2" href="https://www.youtube.com/watch?v=C9eZUsGtF3Q&ab_channel=AnthokingGaming">
+            <img src="https://ih1.redbubble.net/image.915662104.0405/st,small,507x507-pad,600x600,f8f8f8.jpg" height="80" />
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mx-2" href="#">Le Panier de chat</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link mx-2 dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">les trucs            
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="#">non</a></li>
+            <li><a class="dropdown-item" href="#">About Us</a></li>
+            <li><a class="dropdown-item" href="#">Contact us</a></li>
+          </ul>          
+        </li>
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+    <div class="container-fluid">
+        <% if current_user %>
+        <div class="d-flex py-3">
+        <li class="nav-item">
+            <%= link_to "My account", edit_user_registration_path, class:"btn text-1000 fw-medium order-1 order-lg-0 fw-bold" %>
+        </li>
+            <li class="nav-item">
+            <%= button_to "Sign out", destroy_user_session_path, method: :delete, class:"btn btn-outline-black rounded-pill order-0 fw-bold"%>
+        </li>
+        </div>
+        <% else %>
+
+        <div class="d-flex py-3">
+        <li class="nav-item ">
+            <%= link_to "Log in", new_user_session_path, class:"btn text-1000 fw-medium order-1 order-lg-0 fw-bold" %>
+        </li>
+        <li class="nav-item">
+            <%= link_to "Sign up", new_user_registration_path, class:"btn btn-purple-moon rounded-pill order-0 fw-bold"  %>
+        </li>
+        </div>
+        <% end %>
+        </ul>
+      </ul>
+    </div>
+    </div>
+  </div>
+</nav>
+  
+  
+
+  
